@@ -1,0 +1,35 @@
+This is a front-view image taken by a drone. Please determine if an aircraft carrier is visible in the image. If found, please tell me its bearing relative to the drone (front, left, right, up, down).
+//close文件
+Output Format:
+{
+    "found": whether the target was found ("true" or "false"),
+    "relative_position": "forward,left,right,up,down",
+    "action": "move_forward,turn_right,turn_left,move_up,move_down"
+}
+
+Example 1:
+Input: The image contains an aircraft carrier in front
+Output:
+{
+    "found": true,
+    "relative_position": "forward",
+    "action": "move_forward"
+}
+
+Example 2:
+Input: The image contains an aircraft carrier in left
+Output:
+{
+    "found": true,
+    "relative_position": left,
+    "action": "turn_right" 
+} 
+
+Example 3:
+Input: The aircraft carrier is not included in the image
+Output:
+{
+    "found": false,
+    "relative_position": null,
+    "action": null
+} 

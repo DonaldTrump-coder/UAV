@@ -1,0 +1,25 @@
+Where is the aircraft carrier in the image?
+If I want the drone to approach the ship, in which direction should I make the drone move? 
+You need to first determine whether the aircraft carrier in the top view image is located in the middle of the image, \
+//close enough
+if so, the drone is close enough to the aircraft carrier, if the aircraft carrier does not exist in the top view image, you need to determine which direction the drone should fly based on the front view image until the aircraft carrier is in the middle of the top view image.
+Please answer using the function defined above.
+   
+Input:
+- Image1 (top view): Captured from the UAV's top camera, showing the scene around the UAV.
+- Image2 (front view): Captured from the UAV's front camera, showing the scene in front of the UAV.
+   
+Output:
+- Generate UAV movement instructions based on the aircraft carrier's relative position in the images.
+   
+Logic:
+1. If you can see the aircraft carrier in the Image2 (front view), generate a movement command based on the relative location. Etc, if the aircraft carrier is located in the top view or front view in the front left direction, return:
+   {"action": "move_forward", "message": "front left"}.
+2. If the aircraft carrier is not detected in both images, return:
+   {"action": "scan_scene", "message": "aircraft carrier not found"} to indicate that the UAV needs to rescan to lock onto the aircraft carrier.
+3. Consider the first two cases if there is no aircraft carrier in the top view (Image1), and if there is a aircraft carrier in the Image1 and the aircraft carrier is in the center of the image, return:
+   {"action": "finished", "message": "aircraft carrier is within proximity"} to indicate that the UAV has approached the aircraft carrier closely enough.
+
+Example output:
+- {"action": "move_forward", "message": "front left"}
+- {"action": "finished", "message": "aircraft carrier is within proximity"}

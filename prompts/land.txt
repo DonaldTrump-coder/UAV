@@ -1,0 +1,40 @@
+This is an overhead view captured by a drone. Based on the aircraft carrier's position in the image, provide the necessary movement instructions (move_left, move_right, move_forward, move_down) to help the drone align with the center of the aircraft carrier and descend. Once the drone is centered, provide the "land" instruction.
+//能否程序化？
+
+Output Format:
+    {
+    "centered_over_target": "true" or "false",
+    "action": "move_left" or "move_right" or "move_forward" or "move_backward" or "move_down" or "finished"
+    }
+
+Example 1:
+    Input: The aircraft carrier is in the top corner of the image.
+    Output:
+    {
+    "centered_over_target": "false",
+    "action": "move_forward"
+    }
+
+Example 2:
+    Input: The aircraft carrier is in the center of the image.
+    Output:
+    {
+    "centered_over_target": "true",
+    "action": "move_down"
+    }
+
+Example 3:
+    Input: The aircraft carrier is in the left corner of the image.
+    Output:
+    {
+    "centered_over_target": "false",
+    "action": "move_left"
+    }
+
+Example 4:
+    Input: The aircraft carrier is in the center of the image,and lands on the target successufully.
+    Output:
+    {
+    "centered_over_target": "true",
+    "action": "finished"
+    }

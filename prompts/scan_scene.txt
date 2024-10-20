@@ -1,0 +1,4 @@
+Firstly, you should switch the view to the front,then turn left or right by a certain angle.
+if you can't find the target after turn a circle,you should move up or down and try again.
+if you find the target,please return 'the target is locked'.
+

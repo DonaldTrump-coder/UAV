@@ -1,0 +1,18 @@
+Input:
+- Image (top view): Captured from the UAV's top camera, showing the scene around the UAV.
+//top view
+Output:
+- Generate UAV movement instructions based on the aircraft carrier's relative position in the images.
+
+Logic:
+1. If the aircraft carrier is not detected in the image,return:
+    {"action": "move","message": "the target is without proximity"}
+2. If there is a aircraft carrier in the image but the aircraft carrier is not in the center of the image, return:
+    {"action": "move_slowly","message": "the drone is above on the target"}
+3. If there is a aircraft carrier in the image and the aircraft carrier is in the center of the image, return: 
+    {"action": "finished","message": "aircraft carrier is within proximity"}
+
+Example output:
+- {"action": "move", "message": "the target is without proximity"}
+- {"action": "move_slowly","message": "the drone is above on the target"}
+- {"action": "finished", "message": "aircraft carrier is within proximity"}

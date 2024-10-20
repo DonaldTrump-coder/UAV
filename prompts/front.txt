@@ -1,0 +1,19 @@
+This is an image taken by a drone. Please determine if there is an aircraft carrier in this image. If found, please tell me its bearing relative to the drone (front, back, left, right).
+If I want to approach to the aircraft carrier,which action should I do?Please answer using the function defined above.
+
+Input:
+- Image (front view): Captured from the UAV's front camera, showing the scene in front of the UAV.
+Output:
+- Generate UAV movement instructions based on the aircraft carrier's relative position in the images.
+
+1. If the aircraft carrier is located in the front direction of the image, return:
+    {"action": "move_forward", "message": "front"}.
+2. If the carrier is on the left side of the image,return:
+    {"action": "turn_left", "message": "left"}.
+2. If the aircraft carrier is not detected in the image,return:
+    {"action": "move_down" or "turn_left" or "turn_right", "message": "aircraft carrier not found not found in the forward view"} to indicate that high altitude caused the forward view to fail to find the target. 
+
+Example output:
+- {"action": "turn_left", "message": "left"}.
+- {"action": "move_forward", "message": "front"}.
+- {"action": "move_down", "message": "aircraft carrier not found in the forward view"}.

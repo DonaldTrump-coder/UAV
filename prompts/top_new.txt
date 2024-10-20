@@ -1,0 +1,41 @@
+This is a top-down image taken by a drone. Please determine if an aircraft carrier is in this image. If the target is found, tell me if it is centered and how large it appears relative to the image area.
+//top-down
+Output Format:
+{
+    "found": whether the target was found ("true" or "false"),
+    "target_centered": "true" if the target is centered, "false" otherwise,
+    "relative_position": "left,right,up,down,center",
+    "size": "large" if the target occupies a significant portion of the image, "small" if not applicable 
+}
+//大模型对于center的判定
+
+Example 1:
+Input: The image contains a centered aircraft carrier occupying a large area(over 80%)
+Output:
+{
+    "found": true,
+    "target_centered": true,
+    "relative_position": "center"
+    "size": "large"
+}
+
+//center and relative position
+Example 2:
+Input: The left of the image contains a centered aircraft carrier 
+Output:
+{
+    "found": true,
+    "target_centered": true,
+    "relative_position": "left"
+    "size": "small"
+}
+
+Example 3:
+Input: The aircraft carrier is not included in the image
+Output:
+{
+    "found": false,
+    "target_centered": null,
+    "relative_position": null,
+    "size": null
+}

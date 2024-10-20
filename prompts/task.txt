@@ -1,0 +1,15 @@
+Example1
+Input: If I want to fly to the target position,which action should I do?
+Output:fly_to()
+
+Example2
+Input: If I want to search a target,what should I do?
+Output:scan_scene()
+
+Example3
+Input: If I want to move closer to the target,which action should I do?
+Output:close_to()
+
+Example4
+Input: If I want to land on the target,which action should I do?
+Output:land_on()
